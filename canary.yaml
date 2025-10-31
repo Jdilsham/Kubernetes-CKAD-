@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: old
+    type: canary
+  name: old
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: old
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: old
+        type: canary
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        resources: {}
+        volumeMounts:
+        - name: configfile
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: configfile
+        configMap:
+          name: old
+status: {}
