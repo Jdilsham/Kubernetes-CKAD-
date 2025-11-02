@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DeamonSet
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demonginx
+  name: demonginx
+spec:
+  selector:
+    matchLabels:
+      app: demonginx
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demonginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
