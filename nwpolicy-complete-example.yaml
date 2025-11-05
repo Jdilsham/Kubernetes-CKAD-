@@ -33,6 +33,7 @@ metadata:
   name: busybox
   labels:
     app: sleepy
+    access: "true"
 spec:
   containers:
   - name: nwp-busybox
