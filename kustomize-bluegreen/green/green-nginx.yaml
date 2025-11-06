@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: blue-nginx
-  name: blue-nginx
+    app: green-nginx
+  name: green-nginx
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -11,7 +11,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: blue-nginx
+      app: green-nginx
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -20,10 +20,10 @@ spec:
   template:
     metadata:
       labels:
-        app: blue-nginx
+        app: green-nginx
     spec:
       containers:
-      - image: nginx:1.14
+      - image: nginx:1.18
         imagePullPolicy: IfNotPresent
         name: nginx
         resources: {}
