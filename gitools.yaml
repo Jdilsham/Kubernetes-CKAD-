@@ -12,5 +12,6 @@ spec:
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
-  imagePullSecret: dockercreds
+  imagePullSecret: 
+    - name: dockercreds
 status: {}
