@@ -1,16 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "1"
-  creationTimestamp: "2025-11-06T16:16:53Z"
-  generation: 1
   labels:
     app: blue-nginx
   name: blue-nginx
   namespace: default
-  resourceVersion: "103034"
-  uid: 7472f7a2-6ed9-4aa7-b02f-008724ef79b1
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
@@ -40,21 +34,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  conditions:
-  - lastTransitionTime: "2025-11-06T16:16:53Z"
-    lastUpdateTime: "2025-11-06T16:16:53Z"
-    message: Deployment does not have minimum availability.
-    reason: MinimumReplicasUnavailable
-    status: "False"
-    type: Available
-  - lastTransitionTime: "2025-11-06T16:16:53Z"
-    lastUpdateTime: "2025-11-06T16:16:53Z"
-    message: ReplicaSet "blue-nginx-cd95759fc" is progressing.
-    reason: ReplicaSetUpdated
-    status: "True"
-    type: Progressing
-  observedGeneration: 1
-  replicas: 3
-  unavailableReplicas: 3
-  updatedReplicas: 3
