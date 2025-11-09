@@ -8,10 +8,10 @@ metadata:
   namespace: indiana
 spec:
   containers:
-  - image: nginx
-    name: inpod
-    resources: {}
-    env:
+    - name: inpod
+      image: nginx:latest
+      resources: {}
+      env:
         - name: COLOR
           valueFrom:
             secretKeyRef:
