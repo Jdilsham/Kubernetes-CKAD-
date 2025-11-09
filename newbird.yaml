@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: oldbird
+    app: newbird
     type: allbirds
-  name: oldbird
+  name: newbird
   namespace: birds
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: oldbird
+      app: newbird
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: oldbird
+        app: newbird
         type: allbirds
     spec:
       containers:
