@@ -11,6 +11,12 @@ spec:
   - image: nginx
     name: inpod
     resources: {}
+    env:
+      - name: COLOR
+        valueFrom:
+          secretKeyRef:
+            name: insecret
+            key: COLOR
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
