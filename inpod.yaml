@@ -12,11 +12,11 @@ spec:
     name: inpod
     resources: {}
     env:
-      - name: COLOR
-        valueFrom:
-          secretKeyRef:
-            name: insecret
-            key: COLOR
+        - name: COLOR
+          valueFrom:
+            secretKeyRef:
+              key: COLOR
+              name: insecret
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
