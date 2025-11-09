@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: sidepod
+spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+      initContainers:
+        - name: sidecar
+          image: alpine:latest
+          restartPolicy: Always
+          command: ['sleep','15'] 
