@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: inpod
+  name: inpod
+  namespace: indiana
+spec:
+  containers:
+  - image: nginx
+    name: inpod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
